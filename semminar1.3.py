@@ -8,7 +8,7 @@ number = 0
 n = int(input('Введите число n: '))
 number = -n
 while number <= n:
-    print(number, end=',')
+    print(number, end=', ')
     number += 1
 
 

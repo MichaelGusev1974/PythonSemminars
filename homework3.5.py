@@ -43,27 +43,41 @@
 #     f1, f2 = f2, f1 - f2   # f1 приравнивается к f2, f2 приравнивается к f1 - f2
 #     print(f2, end=' ')     # Выводится f2
 
-def FibonacciRec(n):
-    if n in [1, 2]:
-        return 1
-    else:
-        return FibonacciRec(n - 1) + FibonacciRec(n - 2)
-def Nega_FibonacciRec(n):
-    if n == 1:
-        return 1
-    if n == 2:
-        return -1
-    else:
-        f1, f2 = 1, -1
-        for i in range(2, n):
-            f1, f2 = f2, f1 - f2
-        return f2
-result_list = [0]
-number = int(input('Введите длину списка - число: '))
-for i in range(1, number + 1):
-    result_list.append(FibonacciRec(i))
-    result_list.insert(0, Nega_FibonacciRec(i))         # Метод insert (). Вставка элемента в список в заданной позиции.
-print(result_list)                                      # Метод insert () позволяет вставить новый элемент в список из
+# def FibonacciRec(n):
+#     if n in [1, 2]:
+#         return 1
+#     else:
+#         return FibonacciRec(n - 1) + FibonacciRec(n - 2)
+# def Nega_FibonacciRec(n):
+#     if n == 1:
+#         return 1
+#     if n == 2:
+#         return -1
+#     else:
+#         f1, f2 = 1, -1
+#         for i in range(2, n):
+#             f1, f2 = f2, f1 - f2
+#         return f2
+# result_list = [0]
+# number = int(input('Введите длину списка - число: '))
+# for i in range(1, number + 1):
+#     result_list.append(FibonacciRec(i))
+#     result_list.insert(0, Nega_FibonacciRec(i))         # Метод insert (). Вставка элемента в список в заданной позиции.
+# print(result_list)                                      # Метод insert () позволяет вставить новый элемент в список из
                                                         # заданной позиции. Метод получает два параметра.
                                                         # Первый параметр – позиция вставки, которая начинается с 0.
                                                         # Второй параметр – имя объекта (значения), которое вставляется.
+
+
+import math
+b = abs(int(input('Введите число заначений:')))
+kod = []
+for i in range(-b,b+1):
+    kod.append(i)
+for i in range(-b-2,-len(kod)-1,-1):
+    kod[i]=kod[i+2]-kod[i+1]
+for i in range(b+2,len(kod),1):
+    kod[i]=kod[i-2]+kod[i-1]
+print(kod)
+
+

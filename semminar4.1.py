@@ -39,16 +39,19 @@
 #
 # print(f"Количество чисел соответствующих условию: {count}")
 
-write = input('Ведите надпись на транскрипте: ')
-lst = "'a', 'b', 'v', 'g', 'd', 'e', 'zh', 'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'kh', 'ts', 'ch', 'sh', 'shch', '', 'y', '', 'e', 'yu', 'ya' "
-i = 0
-result = []
-lst_ru ="'а', 'б', 'в', 'г', 'д', 'e', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я' "
-for i in write:
-    for j in lst:
-        if write[i] == lst[j]:
-            result[i] == lst_ru[j]
-print(result)
+
+alphavitE = ['a', 'b', 'v', 'g', 'd', 'e', 'zh', 'z', 'i', 'y', 'k', 'l', 'm', 'n', 'o', 'p', 'r', 's', 't', 'u', 'f', 'kh', 'ts', 'ch', 'sh', 'shch', '', 'y', '', 'e', 'yu', 'ya' ]
+
+alphavitR = ['а', 'б', 'в', 'г', 'д', 'e', 'ж', 'з', 'и', 'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц', 'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я']
+record = input('Ведите надпись на транскрипте: ') # privet, abba, bag
+word = []
+for i in range(len(record)):
+    x = alphavitE.index(record[i])
+    word.append(alphavitR[x])
+    print(x, end=' ')
+print(*word, sep='')                              # * - фишка, распаковка списка
+
+
 
 
 

@@ -3,28 +3,21 @@
 
 from random import choices #подключаем функцию, Функция choice() состоит в том, чтобы выбрать или сгенерировать
 # случайный элемент, который может быть любым числом или строкой из данной коллекции.
-
 def name(count, simbol):  # первый параметр - количество слов, второй - слово
     lst = []
     for i in range(count):
         y = choices(simbol, k=3)  # формируется список из трех символов, а нам нужно слово
         lst.append("".join(y))    # при помощи метода join():  Создает строку из списка строк (или символы в слово) создаем слово и кладем в список lst
     return lst
-
-my_list = name(10, 'abc')
+my_list = name(10, 'abc')       #  в переменную list_word передали  ф-ию name с параметрами: кол-во эл-ов (слов) и слово
 print(my_list)
-
 def find (word, list_word):       # два параметра: слово и список слов.
-    if word in list_word and list_word.count(word) > 1:    # проверяем: есть ли слово в списке и этого слова > 1.
-        num_of_occurrences = list_word.index(word)
-        print(list_word.index(word), num_of_occurrences + 1)
+    if word in list_word and list_word.count(word) > 1:  # проверяем: есть ли слово в списке И count  этого слова в списке > 1.
+        ind = list_word.index(word)       # ind - переменная - первое вхождение
+        print(list_word.index(word), ind + 1)
     else:
         print(-1)
-
 find(input('Введите слово: '), my_list)
-
-
-
 
 
 # Функция Index - это встроенный метод списка, который позволяет узнать индекс или позицию элемента в последовательности.

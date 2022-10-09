@@ -31,11 +31,21 @@
 #     count += 1
 # print(arr)
 # max_num = arr[0]
+
 # for i in arr:
 #     if i > max_num:
 #         max_num = i
 #
 # print(f' max number is: {max_num}')
 
-a = [1, 4, 8, 7, 5]
-print(max(1, 4, 998, 7, 5))
+# a = [1, 4, 8, 7, 5]
+# print(max(a))
+
+max_var = 0
+for i in range(5):
+    a = int(input('Введите число: '))
+    if a > max_var:
+        max_var = a
+print(max_var)
+
+

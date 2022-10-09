@@ -14,5 +14,6 @@ def abc(a, b, c):
             my_f_s43.write('Корней нет\n')
 
 
-#for i in range(3):
-abc(int(input()), int(input()), int(input()))
+
+for i in range(3):
+    abc(int(input()), int(input()), int(input()))

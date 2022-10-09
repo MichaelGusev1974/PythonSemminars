@@ -8,11 +8,11 @@ x = int(input('Введите координаты точки х: '))
 y = int(input('Введите координаты точки y: '))
 if (x > 0 and y > 0):
     print('x =', x, ';', 'y =', y,';', '-> 1')
-if (x > 0 and y < 0):
+elif (x > 0 and y < 0):
     print('x =', x, ';', 'y =', y,';', '-> 4')
-if (x < 0 and y < 0):
+elif (x < 0 and y < 0):
     print('x =', x, ';', 'y =', y, ';', '-> 3')
-if (x < 0 and y > 0):
+elif (x < 0 and y > 0):
     print('x =', x, ';', 'y =', y, ';', '-> 2')
-if (x == 0 or y == 0):
+else:
     print('x или y по условию задачи не д.б. равны 0')

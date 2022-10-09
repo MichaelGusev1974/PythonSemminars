@@ -5,9 +5,15 @@
 # - 7 -> да
 # - 1 -> нет
 n = int(input('Введите число дня недели: '))
-if (n > 5 and n <=7):
-    print('-', n, '->', 'да')
-if(n >= 1 and n <= 5):
-    print('-', n, '->', 'нет')
-if(n < 1 or n > 7):
-    print('Такого числа для дня недели нет')
+# if (n > 5 and n <=7):
+#     print('-', n, '->', 'да')
+# if(n >= 1 and n <= 5):
+#     print('-', n, '->', 'нет')
+# if(n < 1 or n > 7):
+#     print('Такого числа для дня недели нет')
+if 5 < n < 8:
+    print('Weekend')
+elif 0 < n < 6:
+    print('Workday')
+else:
+    print('It is not a day of the week')

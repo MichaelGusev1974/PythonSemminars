@@ -69,15 +69,24 @@
                                                         # Второй параметр – имя объекта (значения), которое вставляется.
 
 
-import math
-b = abs(int(input('Введите число заначений:')))
-kod = []
-for i in range(-b,b+1):
-    kod.append(i)
-for i in range(-b-2,-len(kod)-1,-1):
-    kod[i]=kod[i+2]-kod[i+1]
-for i in range(b+2,len(kod),1):
-    kod[i]=kod[i-2]+kod[i-1]
-print(kod)
 
+# b = abs(int(input('Введите число заначений:')))
+# kod = []
+# for i in range(-b,b+1):
+#     kod.append(i)
+# for i in range(-b-2,-len(kod)-1,-1):
+#     kod[i]=kod[i+2]-kod[i+1]
+# for i in range(b+2,len(kod),1):
+#     kod[i]=kod[i-2]+kod[i-1]
+# print(kod)
 
+def neg_fib(num: int):
+    a, b = 1, 1
+    list_nums = [0]
+    for i in range(num):
+        list_nums.append(a)
+        list_nums.insert(0, a * (-1) ** i)
+        a, b = b, b + a
+    return list_nums
+
+print(*neg_fib(int(input())))

@@ -1,15 +1,21 @@
 #Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
 # Пример: - пусть N = 4, тогда [ 1, 2, 6, 24 ] (1, 1*2, 1*2*3, 1*2*3*4)
 
+# n = int(input('Введиде число n: '))
+# i = 1
+# number = 1
+# listing = []
+# while i <= n:
+#     number = number*i
+#     listing.append(number)
+#     i += 1
+# print(listing)
 n = int(input('Введиде число n: '))
-i = 1
-number = 1
-listing = []
-while i <= n:
-    number = number*i
-    listing.append(number)
-    i += 1
-print(listing)
+sum_dig = 1
+for i in range(n):
+    sum_dig *= i + 1
+    print(sum_dig, end=', ') # параметр end= у функции print, не дает функции переводить вывод на следующую строку, в ""
+# указываем разделитель. sep - это то, что после вывода, end - то, чем разделяются зрачения
 
 
 

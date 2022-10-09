@@ -8,11 +8,15 @@
     # - 8,9 -> нет
 a = int(input('Введите число а: '))
 b = int(input('Введите число b: '))
-if a**2 == b:
-    print(f'- {a}, {b} -> да')
-
-elif b**2 == a:
-    print(f'- {a}, {b} -> да')
-
+# if a**2 == b:
+#     print(f'- {a}, {b} -> да')
+#
+# elif b**2 == a:
+#     print(f'- {a}, {b} -> да')
+#
+# else:
+#     print(f'- {a}, {b} -> нет')
+if a*a == b or b*b == a:
+    print('yes')
 else:
-    print(f'- {a}, {b} -> нет')
+    print('no')

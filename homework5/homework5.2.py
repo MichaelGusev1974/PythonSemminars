@@ -1,22 +1,38 @@
-# Создайте программу для игры с конфетами человек против человека.
-# Условие задачи: На столе лежит 2021 конфета. Играют два игрока делая ход друг после друга. Первый ход определяется
-# жеребьёвкой. За один ход можно забрать не более чем 28 конфет. Все конфеты оппонента достаются забравшему последнюю конфету
-# (сделавшему последний ход). Сколько конфет нужно взять первому игроку, чтобы забрать все конфеты у своего конкурента?
-from random import *
-
-tern = bool(randint(0, 2))
-print(tern)
-candys = 100
-while candys > 0:
-    print('осталось конфет: ', candys)
-    if tern:
-        candys -= int(input('Ход игрока1: '))
-        tern = not tern
+# Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+from itertools import groupby, starmap
+from os import path
+def rle_encode(text='text_words.txt', code_text='text_code_word.txt'):
+    if path.exists(text) and not path.exists(code_text):
+        with open(text) as my_f_1, \
+            open(code_text, 'a') as my_f_2:
+            for i in my_f_1:
+                my_f_2.write("".join([f"{len(list(v))}{ch}" for ch, v in groupby(i)]))
     else:
-        candys -= int(input('Ход игрока2: '))
-        tern = not tern
-if tern:
-    print('Победил игрок 2')
-else:
-    print('Победил игрок 1')
-print('Game over')
+        print('The file do not exist in the system')
+# def rle_decode(name):
+#     if path.exists(name):
+#         with open(name) as my_f:
+#             n = ""
+#             for k in my_f:
+#                 word_nums = []
+#                 for i in k.strip():
+#                     if i.isdidgit():
+#                         n += i
+#                     else:
+#                         word_nums.append([int(n), i])
+#                         n = ""
+#                 print("".join(starmap(lambda x, y: x * y, word_nums)))
+#     else:
+#         print('The file do not exist in the system')
+def rle_decode(name):
+    if path.exists(name):
+        with open(name) as m_f:
+            for i in m_f:
+                word_nams = ["".join(g) for k, g in groupby(i.strip(), key=str.isdigit)]
+                print("".join([f"{int(word_nams[i]) * word_nams[i + 1]}" for i in range(0, len(word_nams), 2)]))
+    else:
+        print('The file do not exist in the system')
+rle_decode('text_code_word.txt')
+rle_encode('text_words.txt')
+# rle_encode(input('Enter the name of the file with the text: '), input('Enter the file name to record: '))
+# rle_decode(input('Enter the name of the file with the text: '))
